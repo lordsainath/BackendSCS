@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Admission Form</title>
+</head>
+<body>
+    
+   <div class="w-screen h-screen bg-red-100 flex justify-center items-center">
+        
+       <div class="w-[40%] bg-white rounded-md p-5">
+        <h1 class="text-center text-2xl font-semibold">Login Form</h1>
+
+        <form method="post"  class="flex flex-col gap-2 mt-5" action="/getformData">
+            <input class="px-5 py-1 outline-none border border-gray-300 rounded-md placeholder:text-gray-500" type="text" placeholder="Enter Your username" name="username" id="">
+            <input class="px-5 py-1 outline-none border border-gray-300 rounded-md placeholder:text-gray-500" type="email" placeholder="Enter Your email" name="email" id="">
+            <input class="px-5 py-1 outline-none border border-gray-300 rounded-md placeholder:text-gray-500" type="password" placeholder="Enter Your password" name="passwordddddd" id="">
+            <button type="submit" class="bg-black text-white py-1 rounded-md cursor-pointer ">Submit</button>
+        </form>
+
+
+       </div>
+       
+
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "backendcoursescs",
+  "version": "1.0.0",
+  "description": "Here we are going to Study the backend full course from youtube by Ankur Bhaiya",
+  "homepage": "https://github.com/lordsainath/BackendSCS#readme",
+  "bugs": {
+    "url": "https://github.com/lordsainath/BackendSCS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordsainath/BackendSCS.git"
+  },
+  "license": "ISC",
+  "author": "Lordsainath",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "cat-names": "^4.0.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "random-cat-img": "^1.1.8"
+  }
+}
