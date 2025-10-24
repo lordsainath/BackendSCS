@@ -3,7 +3,7 @@ Date:- 22/10/2025
 // First We initialized the folder by using npm init.We also created Readme.md file to write down the notes.
 
 <!-- package -->
-- Package is a resuable code which is written by another developer whcih will help another developers to write the code fastly.
+- Package is a resuable code which is written by another developer which will help another developers to write the code fastly.
 
 <!-- Installing cat-me -->
 - To understand Package we are installing the cat-me package from npm website
@@ -22,14 +22,14 @@ Date:- 22/10/2025
 - first we are going to require('http') package
 - creating server using createServer() with callback function which includes req & res
 -  res.end("Hello Server")
-- to run the server we have to lister to the server by providing the port number
+- to run the server we have to listen to the server by providing the port number
 - we are also started to learn the routing in http server - (req.url) - condition
 - we also learn to how to use nodemon
 
 
 <!-- Express -->
-- cmd - npm i expressdddd
-- we requir it in the file also call the function
+- cmd - npm i express
+- we require it in the file also call the function
 - after that we create some routes using get also listen to the server
 
 - after that we wanted to render html so to do so we have to set the view-engine (there are many types  of view engine)
@@ -44,7 +44,7 @@ Date:- 22/10/2025
 - multiple types- custome,built-in, thirdParty middlewares
 
 - first we created custom middleware using use
-- we installed third party middleware which is morgan.we required morgan
+- we installed third party middleware which is morgan. we required morgan
 - expressServer.use(morgan('dev'));
 
 - if we have to create a middleware for specific route we have to pass in the route also provide a three arg.
@@ -61,4 +61,52 @@ Date:- 22/10/2025
 - expressServer.use(express.urlencoded({extended:true}))
 
 <!-- How to link css to the frontend -->
-- first we creat a public folder and include the stylsheet in it to render anything we have to pass it from backend to do so we have to expressServer.use(express.static('public'))
+- first we creat a public folder and there we create multiple folders such as images, stylesheets,javascritps . include the stylsheet in it to render anything we have to pass it from backend to do so we have to expressServer.use(express.static('public'))
+
+
+
+Date :- 23/10/2025 ✅
+
+<!-- Harsh bhaiya YT :- Backend The Endgamepart 1 -->
+
+- first we started with revising old classes for creating route and rendering page with css.we created task1 and perform all the tasks.
+
+- We have to do a lot of setup work when creating a new Express project, which means writing all the code and setting up everything each time. To save this time, we can use Express Generator — it automatically creates the folder structure and basic code for the project.
+
+- express generator 
+  - we installed express-generator globally
+  - npm i express-generator -g
+  - then create a new app using 
+  - express appName --view=ejs
+  - after that install all the dependencies -  npm i 
+
+- after that we started to learn about mongodb where we first installed the mongodb from the browswer after that we installed mongoose in our backend folder
+- we also learned about mongodb what is db, what is model and collection, what is scheme and document.
+-  after that we started to connect the backend with mongodb 
+- npm i mongoose
+- require and setup the files
+- const mongoose = require("mongoose");
+- mongoose.connect("mongodb://127.0.0.1:27017/practicing");
+- after that we created a userScheme mongoose.Scheme({});
+- after that we created and export  a modle mongoose.Model('modelName',schema)
+- module.exports = mongoose.model("userModels", userSchema);
+- after that we started to create, read, delete document in model
+- method such as model.create({}),model.find(),findOne(filter);findOneAndDelete(filter).
+- after that we started with learning about cookies and session.
+
+
+
+  Date : 24/10/2025
+  <!-- Revising all the concepts -->
+
+  - Here i installed a new package for summarizing all the endpoints in our index.js
+   - npm i express-list-endpoints
+   - requrie it and console.log
+   - const listEndpoints = require('express-list-endpoints');
+   - const endpoints = listEndpoints(router);
+   - console.log(endpoints);
+
+
+
+
+   countDocuments(),deleteMany({})
