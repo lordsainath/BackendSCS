@@ -3,14 +3,31 @@ var router = express.Router();
 const userModel = require("./users");
 // const listEndpoints = require('express-list-endpoints');
 
-
 /* GET home page. */
 router.get("/", async function (req, res) {
   const totalcount = await userModel.countDocuments();
-  const getalluser = await userModel.find();
+ 
 
-  res.render("index", { count: totalcount, getalluser });
-});
+  res.render("index", { count: totalcount });
+}); 
+
+
+// flash message aapko ye allow karte hai ki hum is route mein bane huye data ko doosare rotue mein use kar sko
+router.get('/login',(req,res)=>{
+   
+})
+router.get('/failed',(req,res)=>{
+  req.flash("username",'lordsainath');
+  res.send("flash is set")
+  
+})
+
+router.get('/checkkaro',(req,res)=>{
+  console.log(req.flash("username"))
+  res.send("hola")
+  
+})
+
 
 // create a document
 router.post("/createuser", async (req, res) => {
@@ -59,5 +76,44 @@ router.get("/deletealluser", async (req, res) => {
 });
 // const endpoints = listEndpoints(router);
 // console.log(endpoints);
+
+// session
+router.get("/setsession", (req, res) => {
+  req.session.authid = "bolakey";
+  console.log(req.session.authid);
+  res.send("here we are implementing session");
+});
+// get session
+router.get("/getsession", (req, res) => {
+  if (req.session.authid === "bolakey") {
+    res.send("you are autharized person");
+  } else {
+    res.send("you are not authorized person");
+  }
+});
+// delete session
+router.get("/deletesession", (req, res) => {
+  req.session.destroy((e) => console.log(e));
+  res.send("session is removed");
+});
+
+// coookies
+router.get("/setcookie", (req, res) => {
+  res.cookie("username", 'lordsainath');
+  console.log(res.cookie);
+  res.send("we added cookies to browser");
+});
+// get cookies
+router.get("/getcookie", (req, res) => {
+
+  res.send(req.cookies);
+});
+// delete cookies
+router.get("/deletecookie", (req, res) => {
+
+  console.log(res.clearCookie('username'))
+  res.clearCookie();
+  res.send('cookies cleared')
+});
 
 module.exports = router;

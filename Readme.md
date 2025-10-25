@@ -99,6 +99,9 @@ Date :- 23/10/2025 ✅
   Date : 24/10/2025
   <!-- Revising all the concepts -->
 
+  - Revised all the concepts of last class along with implementation and notes.
+  - created form in ejs to create user and implemented some operation along with this method countDocuments(),deleteMany({})
+
   - Here i installed a new package for summarizing all the endpoints in our index.js
    - npm i express-list-endpoints
    - requrie it and console.log
@@ -109,4 +112,23 @@ Date :- 23/10/2025 ✅
 
 
 
-   countDocuments(),deleteMany({})
+- here we implemented the cookies and session
+ - first we installed npm i express-session required it and setup using 
+ -app.use(session({
+  resave:false,
+  saveUninitialized:false,
+  secret:'hola'
+}))
+- after that we started to create,get and delete session
+ - req.session.username ='lordsainath',
+ - req.session.destroy(e=>console.log(e))
+
+ -after that we stared to create , get and delete cookies
+ - no need to install var cookieParser = require('cookie-parser'); because it is bydefault installed with express-generator
+ - res.cookie(naam,value);
+ - res.cookies() - // to get the cookies
+ - res.clearCookie('naam') // to delete the cookie
+
+
+ Date : 25/10/2025
+ 
